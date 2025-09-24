@@ -55,7 +55,7 @@ unsigned long lastUpdate = 0;
 unsigned long lastTouchMs = 0;
 int touchX = -1, touchY = -1;
 bool gameRunning = true;
-float gameSpeed = 1.0f;
+float gameSpeed = 0.7f;
 
 void initStars() {
   for (int i = 0; i < MAX_STARS; i++) {
@@ -342,10 +342,10 @@ void loop() {
     drawObjects();
     drawPlayer();
     drawHUD();
-    gameSpeed += deltaTime * 0.1f;
+    gameSpeed += deltaTime * 0.04f;
   } else {
     drawGameOver();
   }
-  delay(16);
+  delay(10);
 }
 
